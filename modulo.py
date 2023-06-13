@@ -52,3 +52,17 @@ import importlib
 print('Qualquer coisa')
 
 importlib.reload(meumodulo)
+
+# Packages
+from sys import path
+
+from packages import *
+# OU
+import packages.modulo_novo
+print(packages.modulo_novo.somar(1, 1))
+# OU
+from packages import modulo_novo
+print(modulo_novo.somar(3, 3))
+# OU
+from packages.modulo_novo import somar
+print(somar(2, 2))
