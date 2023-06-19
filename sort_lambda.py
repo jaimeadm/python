@@ -10,7 +10,7 @@ dicionario = [
 
 #lista.sort(reverse=True)
 #print(lista)
-#sorted(lista)
+#sorted(lista) # cria uma nova lista rasa.
 
 def ordenar(item):
     return item['nome']
