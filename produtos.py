@@ -8,12 +8,10 @@ def listar(produtos):
     for chave, produto in enumerate(produtos):
         print(f'{chave}) {produto}')
     print()
-    gerar_log(CAMINHO_LOG, data_atual, 'listar')
 
 def cadastrar(produto, produtos):
     produtos.append(produto.upper())
     listar(produtos)
-    gerar_log(CAMINHO_LOG, data_atual, 'cadastrar')
 
 def alterar(produto, produto_alterado, produtos):
     if produtos[produto]:
@@ -21,7 +19,6 @@ def alterar(produto, produto_alterado, produtos):
     else:
         print('Código Inválido')
     listar(produtos)
-    gerar_log(CAMINHO_LOG, data_atual, 'alterar')
 
 def deletar(produto, produtos):
     if produtos[produto]:
@@ -29,7 +26,6 @@ def deletar(produto, produtos):
     else:
         print('Código inválido')
     listar(produtos)
-    gerar_log(CAMINHO_LOG, data_atual, 'deletar')
 
 def ler(produtos, caminho_arquivo):
     dados = []
@@ -47,9 +43,9 @@ def salvar(produtos, caminho_arquivo):
         dados = json.dump(produtos, arquivo, indent=2, ensure_ascii=False)
     return dados
 
-def gerar_log(caminho, data_atual, funcao):
-    with open(caminho, 'a+', encoding='utf8') as arquivo:
-        arquivo.write(f'{data_atual} - {funcao}\n')
+def gerar_log(data_atual, caminho_log, opcao):
+    with open(caminho_log, 'a+', encoding='utf8') as arquivo:
+        arquivo.write(f'{data_atual} - {opcao}\n')
 
 # Definições
 CAMINHO_ARQUIVO = 'produtos.json'
@@ -61,7 +57,7 @@ while True:
     print('+', '------------------------', '+')
     print('|', '  CADASTRO DE PRODUTOS  ', '|')
     print('+', '------------------------', '+')
-    print(f'- listar\n- cadastrar\n- alterar\n- deletar')
+    print(f'- listar\n- cadastrar\n- alterar\n- deletar\n- sair')
     opcao = input('Escolha uma opção: ')
 
     menu = {
@@ -69,6 +65,7 @@ while True:
         'cadastrar': lambda : cadastrar(produto, produtos),
         'alterar': lambda : alterar(produto, produto_alterado, produtos),
         'deletar': lambda : deletar(produto, produtos),
+        'sair': lambda : True
     }
 
     try:
@@ -88,8 +85,11 @@ while True:
                 produto_alterado = input('Digite o novo nome do produto: ')
             else:
                 continue
+        elif opcao == 'sair':
+            break
         escolha()
         salvar(produtos, CAMINHO_ARQUIVO)
+        gerar_log(data_atual, CAMINHO_LOG, opcao)
     except TypeError:
         print('Opção inválida\n')
         continue
