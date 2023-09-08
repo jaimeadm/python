@@ -27,6 +27,8 @@ python -m venv venv
 source venv/bin/activate
 which python
 pip --version
+pip list
+pip freeze
 pip index versions pymysql
 pip install pymysql
 pip install pymysql --upgrade

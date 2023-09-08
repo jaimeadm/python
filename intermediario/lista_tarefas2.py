@@ -1,4 +1,3 @@
-
 import os, json
 
 def listar(tarefas):
@@ -48,7 +47,7 @@ def ler(tarefas, caminho_arquivo):
     dados = []
     try:
         with open(caminho_arquivo, 'r', encoding='utf8') as arquivo:
-            dados.json.load(arquivo)
+            dados = json.load(arquivo)
     except FileNotFoundError:
         print('Arquivo não existe')
         salvar(tarefas, caminho_arquivo)

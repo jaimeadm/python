@@ -363,3 +363,7 @@
 # operacao = num_int % 2 == 0
 # condicao = f'{num_int} é par' if operacao else f'{num_int} é ímpar'
 # print(condicao)
+
+# Módulo exemplo (intermediario)
+print('Este módulo se chama', __name__)
+variavel_modulo = 'Módulo!'
