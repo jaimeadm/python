@@ -946,6 +946,7 @@
 # #os.rename(caminho, 'novo_arquivo.txt')
 
 # JSON
+# json.load(file) cria e retorna um novo dicionário em Python com os pares-chave-valor no arquivo JSON.
 #import json
 
 # pessoa = {
@@ -1016,13 +1017,13 @@
 # try:
 #     with open(caminho_arquivo, 'r', encoding='utf8') as arquivo:
 #         lista = json.load(arquivo)
-#         for l in lista:
-#             print(l)
+#         print(*lista, sep='\n')
 # except FileNotFoundError:
 #     print('Arquivo não encontrado, o arquivo será criado')
 #     with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
 #         lista = json.dump(lista, arquivo, indent=2, ensure_ascii=False)
 
+# print('-' * 50)
 # lista = ['Fulano', 'Ciclano', 'Beltrano']
 
 # with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
@@ -1030,4 +1031,37 @@
 
 # with open(caminho_arquivo, 'r', encoding='utf8' ) as arquivo:
 #     lista = json.load(arquivo)
-#     print(*lista)
+#     print(*lista, sep='\n')
+
+# import json
+
+# # String em formato JSON
+# data_JSON =  """
+# {
+# 	"size": "Medium",
+# 	"price": 15.67,
+# 	"toppings": ["Mushrooms", "Extra Cheese", "Pepperoni", "Basil"],
+# 	"client": {
+# 		"name": "Jane Doe",
+# 		"phone": "455-344-234",
+# 		"email": "janedoe@email.com"
+# 	}
+# }
+# """
+# # json.loads cria um novo dicionário (chave, valor) da string em JSON
+# data_dict = json.loads(data_JSON)
+# print(type(data_dict))
+# print(data_dict['client']['name'])
+
+# # Dicionário em Python
+# client = {
+#     "name": "Nora",
+#     "age": 56,
+#     "id": "45355",
+#     "eye_color": "green",
+#     "wears_glasses": False
+# }
+# # json.dumps cria e retorna uma string com todos os pares chave-valor do dicionário no formato JSON
+# client_JSON = json.dumps(client, indent=4, sort_keys=True)
+# print(type(client_JSON))
+# print(client_JSON)
