@@ -1,0 +1,10 @@
+# https://doc.qt.io/qtforpython-6/quickstart.html
+# pip install pyside6
+
+import PySide6.QtCore
+
+# Prints PySide6 version
+print(PySide6.__version__)  # type: ignore
+
+# Prints the Qt version used to compile PySide6
+print(PySide6.QtCore.__version__)  # type: ignore
