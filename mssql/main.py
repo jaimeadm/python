@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Variables
 SERVER = os.getenv('SERVER')
 DATABASE = os.getenv('DATABASE')
 USERNAME = os.getenv('USERNAME')
