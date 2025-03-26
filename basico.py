@@ -127,7 +127,7 @@
 
 # contagem = 0
 # while contagem <= 20:
-    
+
 #     contagem += 1
 
 #     if contagem == 5:
@@ -192,7 +192,7 @@
 #     if len(letra_digitada) > 1:
 #         print('Digite apenas uma letra')
 #         continue
-    
+
 #     if letra_digitada in palavra_secreta:
 #         letras_acertadas += letra_digitada
 
@@ -204,7 +204,7 @@
 #             palavra_formada += '*'
 
 #     print('Palavra formada:', palavra_formada)
-    
+
 #     if palavra_formada == palavra_secreta:
 #         os.system('clear')
 #         print('VOCÊ GANHOU!! PARABÉNS!')
@@ -269,7 +269,7 @@
 # while True:
 #     print('Selecione uma opção')
 #     opcao = input('[i]nserir [a]pagar [l]istar [s]air: ')
-    
+
 #     if opcao == 'i':    # inserir
 #         valor = input('Digite um valor para inserir: ')
 #         lista.append(valor)
@@ -281,7 +281,7 @@
 #             lista.pop(indice)
 #         except IndexError as e:
 #             print('Índice não existe!')
-#             #print(f"{e}") 
+#             #print(f"{e}")
 #         print()
 #     elif opcao == 'l':  # listar
 
@@ -295,7 +295,7 @@
 #         break
 #     else:
 #         print('Opção Inválida!\n')
-    
+
 # frase = " Seja Bem Vindo,    esta é uma mensagem de aviso  "
 # lista_frases = frase.split(',')
 # nova_lista_frases = []

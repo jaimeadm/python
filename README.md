@@ -25,6 +25,7 @@ Ambiente virtual do python
 mkdir projeto && cd projeto
 python -m venv venv
 source venv/bin/activate
+.\venv\Scripts\activate.ps1 # windows
 which python
 pip --version
 pip list
@@ -33,7 +34,9 @@ pip index versions pymysql
 pip install pymysql
 pip install pymysql --upgrade
 pip uninstall pymysql -y
+pip install --force-reinstall pymysql==1.2.3
 python -m pip install pip --upgrade
+deactivate venv
 deactivate
 cd .. && rm -rf projeto
 ```
