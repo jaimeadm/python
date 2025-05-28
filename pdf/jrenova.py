@@ -18,8 +18,8 @@ from email.message import EmailMessage
 
 # Configuração do e-mail
 EMAIL_REMETENTE = "jrenova@jaime.com.br"
-EMAIL_LOGIN = "AKIAVA6I6DDD76RKVPJV"
-EMAIL_SENHA = "BJvvlO7tblcWijPfxiANMi5FKvscEHWqZhlBlCB7rhJy"
+EMAIL_LOGIN = "seu_usuario"
+EMAIL_SENHA = "sua_senha"
 EMAIL_DESTINATARIO = "alan.silva@jaime.com.br"
 SMTP_SERVIDOR = "email-smtp.sa-east-1.amazonaws.com"
 SMTP_PORTA = 587
