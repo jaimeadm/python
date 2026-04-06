@@ -78,3 +78,37 @@ exec $SHELL
 which python
 python -V
 ```
+
+# Django
+
+Instalar
+```sh
+python -m venv venv
+source venv/bin/activate
+pip install django
+django-admin startproject ola
+cd ola
+python manage.py runserver 192.168.0.125:8080
+```
+
+Configurar
+```sh
+vim ola/settings.py
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '192.168.0.125',
+]
+```
+
+/admin
+```sh
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+startapp
+```sh
+python manage.py startapp home
+```
